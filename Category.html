@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<!-- Font Google -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- icon -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<!-- Logo titleBar -->
+<link rel="icon" href="Assets/img-Logo.jpeg">
+
+
+    <title>SewaJaya</title>
+
+<!-- style css -->
+    
+  </head>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Poppins;
+      }
+      body{
+        background-color: #cdd0d1; /* Light Gray */
+        color: #2C3E50; /* Dark Blue for text */
+      }
+
+      /* navigation-bar */
+      nav{
+        background-color: #2C3E50;
+        color: white;
+        font-family: Arial, sans-serif;
+        padding: 0;
+        position: block;
+        margin-bottom: -10px;
+        box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.2);
+      }
+    .navbar-brand{
+    font-weight: 700;
+    font-size: 20px;
+}
+.nav-link{
+    font-size: 16px;
+    color: #ECF0F1; /* Light Gray */
+}
+  .nav-link.active{
+    font-weight: 700;
+    color: #18BC9C; /* Teal */
+}
+.nav-link:hover::after{
+content: '';
+display: block;
+border-bottom:3px solid #e9e9e9;
+width: 50%;
+margin: auto;
+margin-bottom: -3px;
+  transition:.3s;
+}
+
+.button-primary{
+  width: 90px;
+  height: 30px;
+  color: #ECF0F1; /* Light Gray */
+  background-color: #18BC9C; /* Teal */
+  font-size: 14px;
+  font-weight: 500;
+  background-color: transparent;
+  border: none;
+  transition: background-color 0.3s ease;
+
+}    
+.button-primary:hover{
+  background-color: #148F77; /* Darker Teal */
+}
+.button-secondary{
+  width: 90px;
+  height: 30px;
+  background-color: #ECF0F1; /* Light Gray */
+  font-size: 14px;
+  font-weight: 700;
+  background-color: #e6dddd;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s ease;
+  
+}    
+.button-secondary:hover{
+  background-color: #BDC3C7; /* Gray */
+}
+/* hero section */
+.carousel{
+  background-color: rgba(44, 62, 80, 0.6); /* Semi-transparent Dark Blue */
+}
+.carousel-caption {
+  color: #ECF0F1; /* Light Gray */
+  padding: 20px;
+  border-radius: 10px;
+}
+.carousel-caption h5{
+  font-size: 24px;
+  color: #ECF0F1; /* Light Gray */
+  font-weight: 700;
+}
+.carousel-caption P{
+  font-size: 20px;
+  color: #ECF0F1; /* Light Gray */
+  font-weight: 500;
+}
+.carousel-item{
+  height: 100vh;
+  min-height: 300px
+}
+
+/* Media-icon */
+.container-media{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  padding: 20px;
+  margin: 40px auto;
+  gap: 40px;
+  width: 60%;
+  border: 4px solid #BDC3C7; /* Gray */
+  border-radius: 15px;
+  cursor: pointer;
+  flex-wrap: wrap;
+  background-color: #FFFFFF; /* White background */
+}
+.background-whatsapp,
+.background-fb,
+.background-ig,
+.background-maps {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+.background-whatsapp {
+  background-color: #25D366; /* WhatsApp Green */
+}
+
+.background-fb {
+  background-color: #1877F2; /* Facebook Blue */
+  border: 4px solid #ECF0F1;
+}
+
+.background-ig {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4); /* Instagram Gradient */
+  color: white;
+}
+
+.background-maps {
+  background-color: #FF0000; /* Maps Red (Sesuaikan sesuai kebutuhan) */
+}
+
+.background-whatsapp:hover,
+.background-fb:hover,
+.background-ig:hover,
+.background-maps:hover {
+  transform: scale(1.1);
+}
+
+
+/* Card-Menu */
+.row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+ margin-bottom:20px;
+}
+
+.row h2{
+  color: #2C3E50;
+  font-size: 40px;
+  font-family: Poppins, Helvet;
+  font-family: 700;
+}
+.container-card{
+  padding: 0;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 5px 15px;
+  grid: 20px;
+  padding-bottom: 100px;
+  position:relative ;
+}
+
+.card{
+  width: 80%;
+  height: AUTO;
+  grid-column: span 1 ;
+  border-radius: 10px;
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: all 0.5s;
+  margin: 10px auto;
+  position: relative;
+}
+
+.card:hover{
+  -webkit-transform: scale(1.05);
+  box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.card-body h4{
+  font-size: 20px;
+  font-weight: 700;
+  color: #2C3E50; /* Dark Blue */
+}
+.card-body p{
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 10px;
+  color: #16A085; /* Teal */
+}
+.button-card a{
+  background-color: #E74C3C; /* Coral Red */
+  color: #FFFFFF; /* White */
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.button-card a:hover{
+  background-color: #C0392B; /* Darker Coral Red */
+}
+.button-card{
+  width: 100%;
+  height: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: transparent;
+  border: none;
+  margin: 20px auto;
+  text-align: center;
+}
+.rating{
+  font-size: 20PX;
+  text-align: center;
+    color: #ffd700; /* Gold for stars */
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1200px) {
+        .container-media {
+          width: 80%;
+          gap: 40px;
+        }
+        .background-whatsapp,
+.background-fb,
+.background-ig,
+.background-maps {
+  width:50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  
+}
+
+        .container-card {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 992px) {
+        .container-media {
+          width: 90%;
+          gap: 30px;
+        }
+
+        .container-card {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .carousel-item {
+          height: 80vh;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .container-media {
+          display: flex;
+          width: 90%;
+          gap: 20px;
+        }
+
+        .container-card {
+          grid-template-columns: 1fr;
+        }
+
+        .carousel-item {
+          height: 60vh;
+        }
+
+        .navbar-brand {
+          font-size: 18px;
+        }
+
+        .nav-link {
+          font-size: 14px;
+        }
+
+        .button-primary,
+        .button-secondary {
+          width: 80px;
+          height: 28px;
+          font-size: 12px;
+        }
+
+        .carousel-caption h5 {
+          font-size: 1.2rem;
+        }
+
+        .carousel-caption p {
+          font-size: 1rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .container-media {
+          width: 100%;
+          padding: 10px;
+        }
+
+        .background-whatsapp,
+        .background-fb,
+        .background-ig,
+        .background-maps {
+          width: 60px;
+          height: 60px;
+        }
+        #id{
+          width: 60;
+          height: 60;
+        }
+        svg{
+          height: 60;
+          width: 60;
+        }
+
+        .carousel-caption h5 {
+          font-size: 1rem;
+        }
+
+        .carousel-caption p {
+          font-size: 0.9rem;
+        }
+
+        .card-body h4 {
+          font-size: 18px;
+        }
+
+        .card-body p {
+          font-size: 14px;
+        }
+
+        .rating {
+          font-size: 18px;
+        }
+      }
+
+
+    </style>
+  <body>
+
+  
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+<!-- navbar -->
+  
+<nav class="navbar navbar-dark sticky-top navbar-expand-lg P-3 fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="">
+      <img src="Assets/img-Logo.jpeg" alt="" width="30" class="d-inline-block me-3">Rental Jaya
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mx-auto" id="nav-menu">
+        <li class="nav-item mx-4">
+          <div id="Home">
+            <a class="nav-link " href="Home.html" data-bs-toggle="page" data-bs-target="#Home">HOME</a>
+          </div>
+        </li>
+        <li class="nav-item mx-4">
+          <div id="Category">
+            <a class="nav-link active" href="#" data-bs-toggle="page" data-bs-target="#Category">CATEGORY</a>
+          </div>
+        </li>
+        <li class="nav-item mx-4">
+          <div id="Review">
+            <a class="nav-link" href="Review.html" data-bs-toggle="page" data-bs-target="#Review">REVIEW</a>
+          </div>
+        </li>
+        <!-- Tab Baru -->
+        <li class="nav-item mx-4" id="keranjangTab" style="display: none;">
+          <a class="nav-link" href="#">KERANJANG</a>
+        </li>
+        <li class="nav-item mx-4" id="chatTab" style="display: none;">
+          <a class="nav-link" href="#">CHAT</a>
+        </li>
+      </ul>
+      <div>
+        <button class="button-primary" id="registerButton">DAFTAR</button>
+        <button class="button-secondary" id="loginButton">MASUK</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Form Daftar -->
+<div id="registerForm" style="display: none;">
+  <h2>Daftar</h2>
+  <form>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username"><br><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"><br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+    <input type="submit" value="Daftar">
+  </form>
+</div>
+
+<!-- Form Masuk -->
+<div id="loginForm" style="display: none;">
+  <h2>Masuk</h2>
+  <form>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username"><br><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"><br><br>
+    <input type="submit" value="Masuk">
+  </form>
+</div>
+
+
+<!-- slide Section -->
+<div id="carouselExampleDark" class="carousel carousel-dark slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="100">
+      <img src="Assets/Tumbnail-laman-sewa-mobil.png" class="d-block w-100" alt="..." >
+      <div class="carousel-caption">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+        <p><a href="" class="btn btn-primary mt3">Order Here!</a></p>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="100">
+      <img src="Assets/mini-bus-12.png" class=" w-100" alt="...">
+      <div class="carousel-caption">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+        <p> <a href="" class="btn btn-primary mt3">Order Here!</a>
+        </p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="Assets/C-RV.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+        <p> <a href="" class="btn btn-primary mt3">Order Here!</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- Section Sosmed -->
+ <div class="container-media mt-5">
+    <div class="background-whatsapp">
+      <i class="bi bi-whatsapp" id="icon" style=" font-size: 55px; color: #FFFFFF;"><a href=""></a></i>
+    </div>
+    <div class="background-fb">
+        <i class="bi bi-facebook " id="icon" style="font-size: 80px; color: #ECF0F1;"><a href="#"></a></i>
+    </div>
+    <div class="background-ig">
+      <svg xmlns="http://www.w3.org/2000/svg" id="icon" width="40" height="40" fill="white" class="bi bi-instagram" viewBox="0 0 16 16">
+        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+      </svg>
+    </div>
+    <div class="background-maps">
+      <img id="icon" src="Assets/google maps.png" alt="google maps" style="width:80px; height: 80px;">
+    </div>
+  </div>
+ </div>
+
+ 
+ <!-- Recomendasi Section -->
+ <section id="card-recomend">
+   <div class="row">
+     <div class="col-12 text-center mb-4">
+       <h2>JENIS PRODUK</h2>
+      </div>
+      </div>
+          <div class="container-card">
+                <div class="card">
+                  <img src="Assets/honda.png" alt="">
+                  <div class="card-body text-center">
+                    <h4>Honda C-RV</h4>
+                    <p>Rp. 150.000.000</p>
+                  </div>
+                  <div class="rating" style="align-items: center;">
+                    <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                    <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                    <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                    <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                    <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                  </div>
+                  <div class="button-card">
+                    <a class="btn btn-primary" href="#" role="button"data-bs-toggle="modal" data-bs-target="#orderModal">order Now</a>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="Assets/suzuki .png" alt="">
+                  <div class="card-body text-center">
+                    <h4>Honda C-RV</h4>
+                    <p>Rp. 150.000.000</p>
+                  </div>
+                  <div class="rating">
+                    <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                    <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                    <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                    <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                    <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                  </div>
+                  <div class="button-card">
+                    <a class="btn btn-primary" href="#" role="button"data-bs-toggle="modal" data-bs-target="#orderModal">order Now</a>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="Assets/toyota.png" alt="">
+                  <div class="card-body text-center">
+                    <h4>Honda C-RV</h4>
+                    <p>Rp. 150.000.000</p>
+                  </div>
+                  <div class="rating">
+                    <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                    <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                    <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                    <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                    <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                  </div>
+                  <div class="button-card"> 
+                    <a class="btn btn-primary" href="#" role="button"data-bs-toggle="modal" data-bs-target="#orderModal">order Now</a>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="Assets/mitsubish.png" alt="">
+                  <div class="card-body text-center">
+                    <h4>Honda C-RV</h4>
+                    <p>Rp. 150.000.000</p>
+                  </div>
+                  <div class="rating">
+                    <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                    <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                    <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                    <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                    <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                  </div>
+                  <div class="button-card">
+                    <a class="btn btn-primary" href="#" role="button"data-bs-toggle="modal" data-bs-target="#orderModal">order Now</a>
+                  </div>
+                </div>
+                <div class="card">
+                      <img src="Assets/bus.png" alt="">
+                      <div class="card-body text-center">
+                        <h4>Honda C-RV</h4>
+                        <p>Rp. 150.000.000</p>
+                      </div>
+                      <div class="rating">
+                        <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                        <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                        <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                        <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                        <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                      </div>
+                      <div class="button-card">
+                        <a class="btn btn-primary" href="#" role="button" data-bs-toggle="modal" data-bs-target="#orderModal">order Now</a>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <img src="Assets/mini-bus-12.png" alt="">
+                      <div class="card-body text-center">
+                        <h4>Honda C-RV</h4>
+                        <p>Rp. 150.000.000</p>
+                      </div>
+                      <div class="rating">
+                        <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                        <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                        <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                        <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                        <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                      </div>
+                      <div class="button-card"> 
+                        <a class="btn btn-primary" href="#" role="button" data-bs-toggle="modal" data-bs-target="#orderModal">order Now</a>
+                      </div>
+                    </div>
+
+                    <div class="card">
+                      <img src="Assets/hyundai.png" alt="">
+                      <div class="card-body text-center">
+                        <h4>Honda C-RV</h4>
+                        <p>Rp. 150.000.000</p>
+                      </div>
+                      <div class="rating">
+                        <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                        <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                        <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                        <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                        <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                      </div>
+                      <div class="button-card">
+                        <a class="btn btn-primary" href="#" role="button" data-bs-toggle="modal" data-bs-target="#orderModal">order Now</a>
+                      </div>
+                      </div>
+
+                    <div class="card">
+                      <img src="Assets/C-RV.png" alt="">
+                      <div class="card-body text-center">
+                        <h4>Honda C-RV</h4>
+                        <p>Rp. 150.000.000</p>
+                      </div>
+                      <div class="rating">
+                        <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                        <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                        <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                        <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                        <i class="bi bi-star-fill" style="color: #db6301;"></i>
+                      </div>
+                      <div class="button-card">
+                        <a class="btn btn-primary" href="#" role="button" data-bs-toggle="modal" data-bs-target="#orderModal">order Now</a>
+                      </div>
+          </div>
+        </div>
+    </section>
+    <!-- Modal Order Now -->
+<!-- Modal Order Now -->
+<div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="orderModalLabel">Rental Jaya</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="Assets/C-RV.png" alt="Gambar Mobil" class="img-fluid">
+          </div>
+          <div class="col-md-6">
+            <h4>Deskripsi Mobil</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+            <h4>Harga</h4>
+            <p>Rp. 150.000.000</p>
+            <h4>Pilihan Order</h4>
+            <select class="form-select" id="carType" required>
+              <option selected disabled>JENIS MOBIL</option>
+
+              <option value="Honda C-RV">Mobil Only</option>
+              <option value="Toyota Avanza">Include Driver non Tol</option>
+              <option value="Suzuki Ertiga">All in</option>
+              <!-- Tambahkan opsi lainnya sesuai kebutuhan -->
+            </select><br>
+            <select class="form-select" id="carType" required>
+              <option selected disabled>Pilih Jenis Order</option>
+              <option value="Honda C-RV">Mobil Only</option>
+              <option value="Toyota Avanza">Include Driver non Tol</option>
+              <option value="Suzuki Ertiga">All in</option>
+              <!-- Tambahkan opsi lainnya sesuai kebutuhan -->
+            </select>
+          </div>
+        </div>
+        <div id="orderForm">
+          <div class="mb-3">
+            <label for="rentalDuration" class="form-label">Durasi Rental</label>
+            <select class="form-select" id="rentalDuration" required>
+              <option selected disabled>Pilih Durasi</option>
+              <option value="1">1 Hari</option>
+              <option value="2">2 Hari</option>
+              <option value="3">3 Hari</option>
+              <option value="7">1 Minggu</option>
+              <!-- Tambahkan opsi lainnya sesuai kebutuhan -->
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="pickupDate" class="form-label">Tanggal Penjemputan</label>
+            <input type="date" class="form-control" id="pickupDate" required>
+          </div>
+          <div class="mb-3">
+            <label for="pickupTime" class="form-label">Waktu Penjemputan</label>
+            <input type="time" class="form-control" id="pickupTime" required>
+          </div>
+          <div class="mb-3">
+            <label for="additionalRequests" class="form-label">Permintaan Tambahan</label>
+            <textarea class="form-control" id="additionalRequests" rows="3" placeholder="Misalnya: Kursi bayi, GPS, dll."></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="contactName" class="form-label">Nama Lengkap</label>
+            <input type="text" class="form-control" id="contactName" placeholder="Nama Anda" required>
+          </div>
+          <div class="mb-3">
+            <label for="contactPhone" class="form-label">Nomor Telepon</label>
+            <input type="tel" class="form-control" id="contactPhone" placeholder="0812-3456-7890" required>
+          </div>
+          <div class="mb-3">
+            <label for="contactEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="contactEmail" placeholder="email@example.com" required>
+          </div>
+          <div class="mb-3">
+            <label for="pickupLocation" class="form-label">Lokasi Penjemputan</label>
+            <input type="text" class="form-control" id="pickupLocation" placeholder="Alamat lengkap" required>
+          </div>
+          
+          <button type="button> Submit" class="btn btn-primary">Submit</button>
+   
+  </body>
+</html>
